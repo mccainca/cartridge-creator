@@ -1,0 +1,83 @@
+<div class='label-body'>
+  <div class='label-outer-edge-container'>
+    <span class='label-outer-edge-container-left'>8</span>
+    <span class='label-outer-edge-container-right'>8</span>
+  </div>
+  <div class='label-top'>
+    <div class='label-art'>
+
+      <div class='label-image-container'>
+        <img class='label-image' src="{{albumArt}}" alt="Album artwork"/>
+      </div>
+
+    </div>
+    <div class='separator'></div>
+    <div class='label-tracklist'>
+      <table class='table-tracklist'>
+          <tr>
+              <td>
+                <div class="corner">
+                    <div class="triangle"></div>
+                    <div class="triangle-text">1</div>
+                </div>
+                <div class='tracklist'>
+                  <ul>
+                    <li *ngFor="let track of program1">
+                      {{ track }}
+                    </li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="corner">
+                    <div class="triangle"></div>
+                    <div class="triangle-text">3</div>
+                </div>
+                <div class='tracklist'>
+                  <ul>
+                    <li *ngFor="let track of program3">
+                      {{ track }}
+                    </li>
+                  </ul>
+                </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <div class="corner">
+                    <div class="triangle"></div>
+                    <div class="triangle-text">2</div>
+                </div>
+                <div class='tracklist'>
+                  <ul>
+                    <li *ngFor="let track of program2">
+                      {{ track }}
+                    </li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="corner">
+                    <div class="triangle"></div>
+                    <div class="triangle-text">4</div>
+                </div>
+                <div class='tracklist'>
+                  <ul>
+                    <li *ngFor="let track of program4">
+                      {{ track }}
+                    </li>
+                  </ul>
+                </div>
+              </td>
+          </tr>
+      </table>
+    </div>
+    <div class='separator'></div>
+
+    <div class='label-side'>
+        <span class='label-album'>"{{album}}"</span>
+        <span class='label-artist'>{{artist}}</span>
+
+    </div>
+  </div>
+</div>

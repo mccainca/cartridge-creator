@@ -1,0 +1,57 @@
+<form [formGroup]="formGroup">
+  <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Cartridge Creator</span>
+    <span class="spacer"></span>
+    <button mat-flat-button color="primary">
+      <mat-icon class="icon">print</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  </mat-toolbar>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+<div fxFlex="50%">
+
+<mat-card class="card mat-elevation-z0">
+
+  <mat-card-content>
+    <mat-form-field>
+      <mat-select placeholder="Choose your cartridge theme" (selectionChange)="onThemeSelectionChanged($event)" formControlName="theme">
+        <mat-option *ngFor="let theme of themes;" [value]="theme.displayName">
+          {{theme.displayName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Artist Name" value="" formControlName="artistName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Album Title" value="" formControlName="albumName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="url" placeholder="Album Art URL" value="" formControlName="albumArtUrl">
+    </mat-form-field>
+    <mat-accordion display-mode="flat">
+      <mat-expansion-panel class='mat-elevation-z0' *ngFor="let program of programs;">
+        <mat-expansion-panel-header class='panel-header'>
+          <mat-panel-description>
+            Add your Program {{program|titlecase}} track list
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field *ngFor="let track of tracks;">
+          <input matInput placeholder="Track {{track|titlecase}}" >
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+ </mat-card>
+
+  </div>
+  <div fxFlex="50%" fxLayoutAlign="center">
+    <ng-template theme-host></ng-template>
+  </div>
+</div>
+
+</form>
