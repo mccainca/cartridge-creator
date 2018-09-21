@@ -1,4 +1,3 @@
-<form [formGroup]="formGroup">
   <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Cartridge Creator</span>
@@ -12,6 +11,8 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
 <div fxFlex="50%">
+
+<form [formGroup]="albumInfo">
 
 <mat-card class="card mat-elevation-z0">
 
@@ -32,8 +33,8 @@
     <mat-form-field>
       <input matInput type="url" placeholder="Album Art URL" value="" formControlName="albumArtUrl">
     </mat-form-field>
-    <mat-accordion display-mode="flat">
-      <mat-expansion-panel class='mat-elevation-z0' *ngFor="let program of programs;">
+    <mat-accordion display-mode="flat" *ngFor="let program of programs;">
+      <mat-expansion-panel class='mat-elevation-z0'>
         <mat-expansion-panel-header class='panel-header'>
           <mat-panel-description>
             Add your Program {{program|titlecase}} track list
@@ -41,17 +42,15 @@
         </mat-expansion-panel-header>
 
         <mat-form-field *ngFor="let track of tracks;">
-          <input matInput placeholder="Track {{track|titlecase}}" >
+          <input matInput placeholder="Track {{track|titlecase}}" formControlName="{{program}}_{{track}}">
         </mat-form-field>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-card-content>
  </mat-card>
-
+</form>
   </div>
   <div fxFlex="50%" fxLayoutAlign="center">
     <ng-template theme-host></ng-template>
   </div>
 </div>
-
-</form>
