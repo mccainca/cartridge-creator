@@ -1,3 +1,61 @@
-<p>
-  typewriter works!
-</p>
+<div class='label-body'>
+
+  <div class='center'>
+    <span class='artist'>{{data.artistName}}</span>
+    <br>
+    <span class='album'>{{data.albumName}}</span>
+  <div class='label-tracklist'>
+      <mat-grid-list cols="2" gutterSize="0px">
+        <mat-grid-tile>
+          <div class="table-tracklist">
+            <div class='tracklist' *ngIf="data.programs?.length > 0">
+              <span class='program'>Program One</span>
+              <ul>
+                <li *ngFor="let track of data.programs[0]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="table-tracklist">
+            <div class='tracklist' *ngIf="data.programs?.length > 0">
+              <span class='program'>Program Three</span>
+              <ul>
+                <li *ngFor="let track of data.programs[2]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="table-tracklist">
+            <div class='tracklist'*ngIf="data.programs?.length > 0">
+              <span class='program'>Program Two</span>
+              <ul>
+                <li *ngFor="let track of data.programs[1]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="table-tracklist">
+            <div class='tracklist' *ngIf="data.programs?.length > 0">
+              <span class='program'>Program Four</span>
+              <ul>
+                <li *ngFor="let track of data.programs[3]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+        </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,40 @@
+.label-body {
+  font-family: TravelingTypewriter;
+  border: 1px dotted grey;
+  width: 300px;
+  height: 336px;
+  text-align: center;
+  padding: 15px;
+  font-size: 6;
+}
+
+.artist {
+  font-weight: bolder;
+}
+
+.label-tracklist {
+    font-size: 10px;
+    text-align: left;
+    top:75px;
+
+}
+
+
+.table-tracklist {
+  height: 130px;
+  width: 145px;
+  position:absolute;
+}
+
+ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  list-style-position: outside;
+}
+
+li {
+  margin-left: 7px;
+  list-style-position: inside;
+  padding: 2px;
+}
