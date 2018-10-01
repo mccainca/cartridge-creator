@@ -3,6 +3,13 @@
 //   border: 1px solid black;
 //   border-collapse: collapse;
 // }
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 
 mat-form-field.mat-form-field {
   width: 100%;

@@ -1,16 +1,16 @@
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="no-print">
   <mat-toolbar-row>
     <span>Cartridge Creator</span>
     <span class="spacer"></span>
     <button mat-flat-button color="primary">
-      <mat-icon class="icon">print</mat-icon>
+      <mat-icon class="icon" (click)="print()">print</mat-icon>
     </button>
   </mat-toolbar-row>
   </mat-toolbar>
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
 
-<div fxFlex="50%">
+<div fxFlex="50%" class="no-print">
 
 <form [formGroup]="albumInfo">
 
@@ -33,16 +33,16 @@
     <mat-form-field>
       <input matInput type="url" placeholder="Album Art URL" value="" formControlName="albumArtUrl">
     </mat-form-field>
-    <mat-accordion display-mode="flat" *ngFor="let program of programs;">
-      <mat-expansion-panel class='mat-elevation-z0'>
+    <mat-accordion display-mode="flat" *ngFor="let program of albumInfo.controls.programs.controls; let p=index" formArrayName="programs">
+      <mat-expansion-panel class='mat-elevation-z0' (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header class='panel-header'>
           <mat-panel-description>
-            Add your Program {{program|titlecase}} track list
+            Add your Program {{programs[p]|titlecase}} track list
           </mat-panel-description>
         </mat-expansion-panel-header>
 
-        <mat-form-field *ngFor="let track of tracks;">
-          <input matInput placeholder="Track {{track|titlecase}}" formControlName="{{program}}_{{track}}">
+        <mat-form-field *ngFor="let track of albumInfo.controls.programs.controls[p].controls; let t=index" formArrayName={{p}}>
+          <input matInput placeholder="Track {{tracks[t]|titlecase}}" formControlName="{{t}}">
         </mat-form-field>
       </mat-expansion-panel>
     </mat-accordion>

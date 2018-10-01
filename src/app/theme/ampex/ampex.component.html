@@ -7,76 +7,81 @@
     <div class='label-art'>
 
       <div class='label-image-container'>
-        <img class='label-image' src="{{albumArt}}" alt="Album artwork"/>
+        <img class='label-image' src="{{data.albumArtUrl}}" *ngIf="data.albumArtUrl"/>
       </div>
 
     </div>
     <div class='separator'></div>
     <div class='label-tracklist'>
-      <table class='table-tracklist'>
-          <tr>
-              <td>
-                <div class="corner">
-                    <div class="triangle"></div>
-                    <div class="triangle-text">1</div>
-                </div>
-                <div class='tracklist'>
-                  <ul>
-                    <li *ngFor="let track of program1">
-                      {{ track }}
-                    </li>
-                  </ul>
-                </div>
-              </td>
-              <td>
-                <div class="corner">
-                    <div class="triangle"></div>
-                    <div class="triangle-text">3</div>
-                </div>
-                <div class='tracklist'>
-                  <ul>
-                    <li *ngFor="let track of program3">
-                      {{ track }}
-                    </li>
-                  </ul>
-                </div>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                <div class="corner">
-                    <div class="triangle"></div>
-                    <div class="triangle-text">2</div>
-                </div>
-                <div class='tracklist'>
-                  <ul>
-                    <li *ngFor="let track of program2">
-                      {{ track }}
-                    </li>
-                  </ul>
-                </div>
-              </td>
-              <td>
-                <div class="corner">
-                    <div class="triangle"></div>
-                    <div class="triangle-text">4</div>
-                </div>
-                <div class='tracklist'>
-                  <ul>
-                    <li *ngFor="let track of program4">
-                      {{ track }}
-                    </li>
-                  </ul>
-                </div>
-              </td>
-          </tr>
-      </table>
+        <mat-grid-list cols="2" rowHeight="90px" gutterSize="1px">
+          <mat-grid-tile>
+            <div class="table-tracklist">
+              <div class="corner">
+                  <div class="triangle"></div>
+                  <div class="triangle-text">1</div>
+              </div>
+              <div class='tracklist'>
+                <ul *ngIf="data.programs?.length > 0">
+                  <li *ngFor="let track of data.programs[0]">
+                    {{ track }}
+                  </li>
+                </ul>
+              </div>
+          </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="table-tracklist">
+              <div class="corner">
+                  <div class="triangle"></div>
+                  <div class="triangle-text">3</div>
+              </div>
+              <div class='tracklist'>
+                <ul *ngIf="data.programs?.length > 0">
+                  <li *ngFor="let track of data.programs[2]">
+                    {{ track }}
+                  </li>
+                </ul>
+              </div>
+          </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="table-tracklist">
+              <div class="corner">
+                  <div class="triangle"></div>
+                  <div class="triangle-text">2</div>
+              </div>
+              <div class='tracklist'>
+                <ul *ngIf="data.programs?.length > 0">
+                  <li *ngFor="let track of data.programs[1]">
+                    {{ track }}
+                  </li>
+                </ul>
+              </div>
+          </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="table-tracklist">
+              <div class="corner">
+                  <div class="triangle"></div>
+                  <div class="triangle-text">4</div>
+              </div>
+              <div class='tracklist'>
+                <ul *ngIf="data.programs?.length > 0">
+                  <li *ngFor="let track of data.programs[3]">
+                    {{ track }}
+                  </li>
+                </ul>
+              </div>
+          </div>
+          </mat-grid-tile>
+        </mat-grid-list>
     </div>
+    <div class='separator'></div>
     <div class='separator'></div>
 
     <div class='label-side'>
-        <span class='label-album'>"{{album}}"</span>
-        <span class='label-artist'>{{artist}}</span>
+        <span class='label-album'>{{data.albumName}}</span>
+        <span class='label-artist'>{{data.artistName}}</span>
 
     </div>
   </div>

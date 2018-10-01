@@ -7,7 +7,8 @@ import { ThemeComponent }      from '../theme.component';
   styleUrls: ['./ampex.component.scss']
 })
 export class AmpexComponent implements OnInit {
-  @Input() data: any;
+  @Input() data: ThemeComponent;
+
 
   constructor() { }
 

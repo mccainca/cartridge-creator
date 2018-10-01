@@ -1,11 +1,14 @@
 export interface ThemeComponent {
   data: {
-    artist?:string;
-    album?:string;
-    albumArt?:string;
-    program1?:string[];
-    program2?:string[];
-    program3?:string[];
-    program4?:string[];
+    artistName?:string;
+    albumName?:string;
+    albumArtUrl?:string;
+    programs?:Programs;
   };
+}
+export interface Programs {
+    One:string[];
+    Two:string[];
+    Three:string[];
+    Four:string[];
 }

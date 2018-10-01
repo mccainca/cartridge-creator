@@ -19,9 +19,9 @@ export class CartCreatorComponent implements OnInit,OnDestroy {
   albumInfo: FormGroup = new FormGroup({});
   panelOpenState = false;
   data: ThemeComponent;
-  programs = ['one','two','three','four'];
-  tracks = ['one','two','three','four','five','six'];
-
+  programs = ['One','Two','Three','Four'];
+  tracks = ['One','Two','Three','Four','Five','Six'];
+  themeId:number = 0;
   constructor(private componentFactoryResolver: ComponentFactoryResolver,private themeService: ThemeService,private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -31,15 +31,27 @@ export class CartCreatorComponent implements OnInit,OnDestroy {
          artistName: ['', Validators.required],
          albumName: ['', Validators.required],
          albumArtUrl: ['', Validators.required],
+         programs: this._formBuilder.array([]),
     });
+
+    const programArray = <FormArray>this.albumInfo.controls['programs'];
 
     _.forEach(this.programs, (program: any) =>{
-        _.forEach(this.tracks, (track: any) =>{
-          this.albumInfo.addControl(program + '_' + track,  new FormControl());
-        });
-    });
+      const newProgram = this.initArray();
+     _.forEach(this.tracks, (track: any) =>{
+       const newTrack = new FormControl('')
+       newProgram.push(newTrack);
+     });
+     programArray.push(newProgram);
 
-    this.onChanges();
+   });
+
+   this.onChanges();
+
+  }
+
+  initArray() {
+      return this._formBuilder.array([]);
   }
 
   ngOnDestroy() {
@@ -47,11 +59,11 @@ export class CartCreatorComponent implements OnInit,OnDestroy {
   }
 
   onThemeSelectionChanged(event) {
-    let id = _.findIndex(this.themes, {displayName: event.value});
-    this.loadComponent(id);
+    this.themeId = _.findIndex(this.themes, {displayName: event.value});
+    this.loadComponent(this.themeId ,{});
   }
 
-  loadComponent(id) {
+  loadComponent(id,data) {
     let themeItem = this.themes[id];
 
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(themeItem.component);
@@ -60,12 +72,17 @@ export class CartCreatorComponent implements OnInit,OnDestroy {
     viewContainerRef.clear();
 
     let componentRef = viewContainerRef.createComponent(componentFactory);
-    // (<ThemeComponent>componentRef.instance).data = {artist: "Hi"};
+    (<ThemeComponent>componentRef.instance).data = data;
   }
+
+  print(): void {
+
+    window.print();
+}
 
   onChanges(): void {
     this.albumInfo.valueChanges.subscribe(val => {
-      console.log("Change! " + val);
+      this.loadComponent(this.themeId ,val)
     });
   }
 }
