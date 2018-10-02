@@ -1,3 +1,62 @@
-<p>
-  wb works!
-</p>
+<div class='label-body'>
+
+  <div class='label-art'>
+
+    <div class='label-image-container'>
+      <img class='label-image' src="{{data.albumArtUrl}}" *ngIf="data.albumArtUrl"/>
+    </div>
+
+  </div>
+   <div class='artist-front'>{{data.albumName}}</div>
+     <table class='track-table'>
+        <tr class='program-data'>
+            <td class='program-number'>1</td>
+            <td>
+              <div class='track-list'>
+              <ul *ngIf="data.programs?.length > 0">
+                <li *ngFor="let track of data.programs[0]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+            </td>
+            <td class='program-number'>3</td>
+            <td>
+              <div class='track-list'>
+              <ul *ngIf="data.programs?.length > 0">
+                <li *ngFor="let track of data.programs[2]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+            </td>
+        </tr>
+        <tr class='program-data'>
+            <td class='program-number'>2</td>
+            <td>
+              <div class='track-list'>
+              <ul *ngIf="data.programs?.length > 0">
+                <li *ngFor="let track of data.programs[1]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+            </td>
+            <td class='program-number'>4</td>
+            <td>
+              <div class='track-list'>
+              <ul *ngIf="data.programs?.length > 0">
+                <li *ngFor="let track of data.programs[3]">
+                  {{ track }}
+                </li>
+              </ul>
+            </div>
+            </td>
+        </tr>
+     </table>
+
+   <div class='cart-footer'>
+     <div class='artist-foot'>{{data.artistName}}</div>
+     <div class='album-foot'>{{data.albumName}}</div>
+   </div>
+</div>

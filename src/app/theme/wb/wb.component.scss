@@ -1,0 +1,93 @@
+.label-body {
+  font-family: sans-serif;
+  border: 1px dotted grey;
+  width: 312px;
+  height: 528px;
+  background-color: black;
+  color: white;
+}
+
+
+.label-image {
+  width: 100%;
+  height: 100%;
+}
+
+.label-image-container {
+  margin-top: 0px;
+}
+
+.label-art {
+  height: 312px;
+  width: 100%;
+}
+
+.artist-front {
+  margin-top: 5px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.cart-footer {
+  height: 70px;
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  vertical-align: bottom;
+  padding-top: 7px;
+  padding-left: 5px;
+}
+
+.album-foot {
+  font-size: 12px;
+}
+
+.artist-foot {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.track-table {
+  height: 144px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr.program-data {
+  height:72px;
+}
+
+td {
+  font-size: 10px;
+}
+.program-number {
+  font-size:52px;
+  font-weight:400;
+  width: 5px;
+  vertical-align: top;
+}
+
+.track-list {
+  font-size: 10px;
+  vertical-align: top;
+  white-space: pre-wrap;
+  width: 95px;
+  height: 65px;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  list-style-position: outside;
+}
+
+
+li {
+  margin-left: 7px;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding: 2px;
+}
