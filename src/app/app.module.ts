@@ -28,6 +28,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
+import { TapeClubComponent } from './theme/tape-club/tape-club.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     TypewriterComponent,
     ThemeDirective,
     CartCreatorComponent,
+    TapeClubComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     WbComponent,
     AmpexComponent,
     TypewriterComponent,
+    TapeClubComponent
  ],
 })
 export class AppModule { }
