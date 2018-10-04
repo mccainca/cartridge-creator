@@ -1,0 +1,123 @@
+.body {
+  font-family: Sans-Serif;
+font-size: 10px;
+}
+.top {
+  width: 288px;
+  height: 336px;
+  border: 1px dotted grey;
+  float:left;
+}
+
+.bottom {
+  width: 288px;
+  height: 384px;
+  border: 1px dotted grey;
+  float: right;
+}
+
+.title {
+text-align: center;
+padding: 15px;
+margin-left: auto;
+margin-right: auto;
+font-size: 12px;
+font-style: italic;
+font-weight: bold;
+}
+
+.label-image {
+  width: 100%;
+  height: 100%;
+}
+
+.8-logo {
+  height: 72px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.black-bar {
+  height: 24px;
+  margin-left: 7px;
+  margin-right: 7px;
+  background-color: black;
+}
+
+.program-list {
+  height: 216px;
+}
+
+.logo-table {
+  margin-left: auto;
+  margin-right: auto;
+  height:72px;
+}
+
+.big-8 {
+  font-size: 72px;
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+.track-list
+{
+  overflow-wrap: break-word;
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px solid black;
+
+}
+
+ul {
+  list-style-type: square;
+  margin: 0;
+  padding: 0;
+  list-style-position: outside;
+}
+
+li {
+  display: inline;
+  list-style-type: square;
+  padding-right: 5px;
+}
+.program-table {
+  width:245px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.program-number {
+  font-weight: bold;
+  width: 15px;
+  text-align: right;
+  float: left;
+  display: inline;
+  font-size: 12px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.label {
+  bottom:0;
+  position: relative;
+  height: 48px;
+  width: 100%;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+.album-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.artist-name {
+  font-weight: bolder;
+  font-size: 18px;
+}

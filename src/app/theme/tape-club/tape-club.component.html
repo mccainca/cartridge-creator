@@ -1,3 +1,39 @@
-<p>
-  tape-club works!
-</p>
+
+<div class='body' fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div class='top' fxFlex="50%">
+    <img class='label-image' src="{{data.albumArtUrl}}" *ngIf="data.albumArtUrl"/>
+  </div>
+
+  <div class='bottom' fxFlex="50%">
+    <div class='8-logo'>
+      <table class='logo-table'>
+        <tr>
+            <td><span class='big-8'>8</span></td>
+            <td>Track<br>Stereo<br>Tape<br>Cartridge</td>
+          </tr>
+        </table>
+    </div>
+    <div class='black-bar'>
+    </div>
+
+    <div class='program-table'>
+      <div class='program-list'>
+        <div class='track-list title'>PROGRAMS</div>
+        <div class='track-list' *ngFor="let program of data.programs; let i=index;">
+            <span class="program-number">{{i + 1}}</span>
+            <ul>
+              <li *ngFor="let track of program; let t=index;">{{track}}<span *ngIf="track && program[t + 1]">&nbsp;&#x25a0;</span></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class='label'>
+      <span class='artist-name'>{{data.artistName}}</span><br>
+      <span class='album-name'>{{data.albumName}}</span>
+
+    </div>
+  </div>
+
+
+</div>
