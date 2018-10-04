@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CartCreatorComponent } from '../cart-creator/cart-creator.component';
 
 const routes: Routes = [
-  { path: 'create', component: CartCreatorComponent },
+  { path: '', component: CartCreatorComponent },
 ];
 
 @NgModule({

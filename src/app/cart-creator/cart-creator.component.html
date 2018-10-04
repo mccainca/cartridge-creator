@@ -33,7 +33,7 @@
     <mat-form-field>
       <input matInput type="url" placeholder="Album Art URL" value="" formControlName="albumArtUrl">
     </mat-form-field>
-    <mat-accordion display-mode="flat" *ngFor="let program of albumInfo.controls.programs.controls; let p=index" formArrayName="programs">
+    <mat-accordion display-mode="flat" *ngFor="let program of albumInfo.controls.programs['controls']; let p=index" formArrayName="programs">
       <mat-expansion-panel class='mat-elevation-z0' (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header class='panel-header'>
           <mat-panel-description>

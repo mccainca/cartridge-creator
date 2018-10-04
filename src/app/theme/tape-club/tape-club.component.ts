@@ -7,7 +7,7 @@ import { ThemeComponent }      from '../theme.component';
   styleUrls: ['./tape-club.component.scss']
 })
 export class TapeClubComponent implements OnInit {
-  @Input() data: ThemeComponent;
+  @Input() data: any;
 
   constructor() { }
 
