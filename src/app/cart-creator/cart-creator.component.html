@@ -30,8 +30,20 @@
     <mat-form-field>
       <input matInput type="text" placeholder="Album Title" value="" formControlName="albumName">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput type="url" placeholder="Album Art URL" value="" formControlName="albumArtUrl">
+    <div class='art-select'>
+    <mat-radio-group class="art-select-radio-group" [(ngModel)]="albumArtUrlSelector" [ngModelOptions]="{standalone: true}">
+      <mat-radio-button class="radio-button-art-select" [value]="true">
+        Add Album Art by Url
+      </mat-radio-button>
+      <mat-radio-button class="radio-button-art-select" [value]="false">
+        Upload Album Art
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <button mat-raised-button color="primary" (click)="imgFileInput.click()" *ngIf="!albumArtUrlSelector">Choose Image</button>
+  <input hidden type="file" #imgFileInput (change)="onUploadAlbumArt($event)"/>
+    <mat-form-field *ngIf="albumArtUrlSelector">
+      <input matInput type="url" placeholder="Album Art URL" value="" formControlName="albumArtUrl" >
     </mat-form-field>
     <mat-accordion display-mode="flat" *ngFor="let program of albumInfo.controls.programs['controls']; let p=index" formArrayName="programs">
       <mat-expansion-panel class='mat-elevation-z0' (opened)="panelOpenState = true" (closed)="panelOpenState = false">

@@ -21,6 +21,7 @@ export class CartCreatorComponent implements OnInit,OnDestroy {
   data: ThemeComponent;
   programs = ['One','Two','Three','Four'];
   tracks = ['One','Two','Three','Four','Five','Six'];
+  albumArtUrlSelector:boolean = true;
   themeId:number = 0;
   constructor(private componentFactoryResolver: ComponentFactoryResolver,private themeService: ThemeService,private _formBuilder: FormBuilder) { }
 
@@ -61,6 +62,17 @@ export class CartCreatorComponent implements OnInit,OnDestroy {
   onThemeSelectionChanged(event) {
     this.themeId = _.findIndex(this.themes, {displayName: event.value});
     this.loadComponent(this.themeId ,{});
+  }
+
+  onUploadAlbumArt(event) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onloadend = () => {
+        this.albumInfo.value.albumArtUrl = reader.result;
+      };
+ }
+
   }
 
   loadComponent(id,data) {

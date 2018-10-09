@@ -29,6 +29,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TapeClubComponent } from './theme/tape-club/tape-club.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { TapeClubComponent } from './theme/tape-club/tape-club.component';
     FlexLayoutModule,
     MatDividerModule,
     MatTabsModule,
+    MatRadioModule
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],
